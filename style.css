@@ -1,0 +1,198 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #e2ebcb;
+    color: #fff;
+    padding: 0px;
+    text-align: center;
+}
+
+header img {
+    max-width: 100%;
+    height: auto;
+}
+
+nav {
+    background: #161616; /* Changed navigation background color */
+    margin: 5px 0;
+    padding: 10px; /* Add some padding to the nav block */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-around;
+    align-items: center; /* Center items vertically */
+    position: relative; /* Position relative for submenu positioning */
+}
+
+nav ul {
+    list-style: none; /* Remove default list styling */
+    margin: 0px;
+    padding: 0px;
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Space between the links */
+    display: flex;
+}
+
+nav ul li {
+    position: relative; /* Position relative for submenu positioning */
+}
+
+nav a {
+    color: #fff7f7; /* Change link color to contrast with the light gray */
+    text-decoration: none;
+    margin: 0px 70px;
+    padding: 10px; /* Add padding for clickable area */
+    display: block; /* Make the link a block element */
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Submenu styles */
+.submenu {
+    display: none; /* Hide submenu by default */
+    position: absolute; /* Position it absolutely */
+    top: 100%; /* Position below the main menu item */
+    left: 0; /* Align to the left of the parent */
+    background: #161616; /* Same background color as the main nav */
+    padding: 10px; /* Padding around submenu items */
+    border-radius: 5px; /* Rounded corners */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+/* Show submenu when hovering over the parent link */
+nav li:hover .submenu {
+    display: block; /* Show submenu on hover */
+}
+
+.submenu li {
+    margin: 5px 5px; /* Space between submenu items */
+}
+
+.submenu a {
+    color: #fff; /* Submenu link color */
+    margin: 0px 40px;
+}
+
+
+.main {
+    text-align: center;
+    padding: 5px;
+    background: #fdfcfc;
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.tokyo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+    background-color: #bea5a5;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.sakura-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+    background-color: #bea5a5;
+    margin-bottom: 20px; /* Added margin to create space below each container */
+    border-radius: 10px;
+    
+}
+
+
+.left-block {
+    flex: 2; /* 2 parts */
+    background: #e2e2e2;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    /* height: 50%; */
+    max-height: 600px;
+    width: 20%;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-block {
+    flex: 8; /* 8 parts */
+    background: #bac3df;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    max-height: 600px;
+    display: flex;
+    width: 80%;
+}
+
+.carousel {
+    position: relative;
+    max-width: 500px;
+    overflow: hidden; /* Hide overflow */
+    margin: 0 auto; /* Center the carousel */
+    /* height: 300px; */
+}
+
+.carousel-images {
+    display: flex; /* Use flexbox for horizontal sliding */
+    transition: transform 0.5s ease; /* Smooth transition for sliding */
+    /* width: calc(100% * 1); */
+    width: 100%;
+}
+
+.carousel-image {
+    min-width: 100%; /* Each image takes the full width of the carousel */
+    height: 100%; /* Set height to 100% of the carousel */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+}
+
+
+.content-block {
+    padding: 0;
+    margin: 10px;
+    background: #d6ebff;
+    box-shadow: 0px 0px 0px 10px #d6ebff;
+    border: dashed 2px white;
+    border-radius: 10px;
+}
+
+.content-block p {
+    margin: 5px; 
+    padding: 5px;
+}
+
+footer {
+    background: #4022c4;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Button styles */
+.apply-button {
+    padding: 10px 20px;
+    background-color: #5c67f2; /* Button color */
+    color: white; /* Text color */
+    border: none;
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    margin-top: 10px; /* Space above the button */
+    font-size: 25px; /* Font size */
+}
+
+.apply-button:hover {
+    background-color: #202cd3; /* Darker color on hover */
+}

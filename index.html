@@ -1,15 +1,147 @@
-<!DOCTYPE HTML>
-<html lang="ja-JP">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="0; url=http://www.asiamusic.hk/h-col-244.html">
-        <script type="text/javascript">
-            window.location.href = "http://www.asiamusic.hk/h-col-244.html"
-        </script>
-        <title>Page Redirection</title>
-    </head>
-    <body>
-        <!-- Note: don't tell people to `click` the link, just tell them that it is a link. -->
-        If you are not redirected automatically, follow this <a href='http://www.asiamusic.hk/h-col-244.html'>link to asiamusic</a>.
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>華音アジア文化芸術促進協会</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        
+.background-cover {
+    width: 100%;
+    height: 100%; /* Adjust the height as needed */
+    background-image: url('sakura-back-image.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="header.jpg.webp" alt="Header Image">
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#">ホーム</a></li>
+        <li>
+            <a href="#">東京国際青少年ピアノコンクール</a>
+            <ul class="submenu">
+                <li><a href="tokyou-contest1.html">東京国際青少年ピアノコンクール2024</a></li>
+                <li><a href="tokyou-contest2.html">東京国際青少年ピアノコンクール2023</a></li>
+                <li><a href="tokyou-contest3.html">東京国際青少年ピアノコンクール2022</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">SAKURA 日本国際青少年アーティストコンクール</a>
+            <ul class="submenu">
+                <li><a href="sakura-contest1.html">SAKURA 日本国際青少年アーティストコンクール2024</a></li>
+                <li><a href="sakura-contest2.html">SAKURA 日本国際青少年アーティストコンクール2023</a></li>
+                <li><a href="sakura-contest3.html">SAKURA 日本国際青少年アーティストコンクール2022</a></li>
+            </ul>
+
+        </li>
+        <li><a href="huayin-org.html">協会概要</a></li>
+    </ul>
+</nav>
+
+<br>
+
+<div class="main">
+    <div class="tokyo-container">
+        <div class="left-block">東京国際青少年ピアノコンクール
+            <br><br><br>
+            <a href="tokyou-contest-apply.html" class="apply-button">参加申込</a>
+        </div>
+        <div class="right-block">
+            <div class="carousel">
+                <div class="carousel-images" id="tokyo-carouselImages">
+                    <a href="tokyou-contest1.html"><img class="carousel-image" src="WechatIMG1-min.jpg" alt="Image 1"></a>
+                    <a href="tokyou-contest2.html"><img class="carousel-image" src="WechatIMG2-min.jpg" alt="Image 2"></a>
+                    <a href="tokyou-contest3.html"><img class="carousel-image" src="WechatIMG3-min.jpg" alt="Image 3"></a>
+                </div>
+            </div>
+            <div>
+                <iframe width="560" height="400" src="https://www.youtube.com/embed/j7vqV89sg7s?si=QrDCMy1Z_i_xKV7F" 
+                    title="東京国際青少年ピアノコンクール" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="sakura-container background-cover">
+        <div class="left-block">SAKURA 日本国際青少年アーティストコンクール
+            <br><br><br>
+            <a href="sakura-contest-apply.html" class="apply-button">参加申込</a>
+        </div>
+        <div class="right-block">
+            <div class="carousel">
+                <div class="carousel-images" id="sakura-carouselImages">
+                    <a href="sakura-contest1.html"><img class="carousel-image" src="sakura-min.jpg" alt="Image 1"></a>
+                </div>
+            </div>
+            <div>
+                <iframe width="560" height="400" src="http://25733637.s21v.faiusr.com/58/ABUIABA6GAAg7d6LtgYott3hQg.mp4" title="SAKURA 日本国際青少年アーティストコンクール" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="content-block">
+        <p>備考欄</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+</div>
+
+<footer>
+    &copy;一般社団法人 華音アジア文化芸術促進協会
+</footer>
+
+
+<script>
+    const imagesContainer = document.getElementById('tokyo-carouselImages');
+    const totalImages = imagesContainer.children.length;
+    let currentIndex = 0;
+    let intervalId = 0;
+
+    function showNextImage() {
+        currentIndex++;
+        const offset = -currentIndex * 100;
+        imagesContainer.style.transition = 'transform 0.5s ease';
+        imagesContainer.style.transform = `translateX(${offset}%)`;
+        //console.log(offset, currentIndex);
+        if (currentIndex === totalImages) {
+            setTimeout(() => {
+                imagesContainer.style.transition = 'none';
+                imagesContainer.style.transform = 'translateX(0)';
+                currentIndex = 0;
+            }, 500);
+        }
+    }
+
+    function startCarousel() {
+        clearInterval(intervalId);
+        intervalId = setInterval(showNextImage, 3000);
+    }
+
+    function stopCarousel() {
+        clearInterval(intervalId); // Clear the interval when stopping the carousel
+    }
+
+    startCarousel();
+
+    const carousel = document.querySelector('.carousel');
+    carousel.addEventListener('mouseenter', stopCarousel);
+    carousel.addEventListener('mouseleave', startCarousel);
+</script>
+</body>
 </html>
