@@ -108,25 +108,37 @@
 
 
 <script>
-    const imagesContainer = document.getElementById('tokyo-carouselImages');
-    const totalImages = imagesContainer.children.length;
-    let currentIndex = 0;
-    let intervalId = 0;
+const imagesContainer = document.getElementById('tokyo-carouselImages');
+const totalImages = imagesContainer.children.length; // Number of actual images
+let currentIndex = 0; // Start from the first actual image (index 0)
+let intervalId = 0;
 
-    function showNextImage() {
-        currentIndex++;
-        const offset = -currentIndex * 100;
-        imagesContainer.style.transition = 'transform 0.5s ease';
-        imagesContainer.style.transform = `translateX(${offset}%)`;
-        //console.log(offset, currentIndex);
-        if (currentIndex === totalImages) {
-            setTimeout(() => {
-                imagesContainer.style.transition = 'none';
-                imagesContainer.style.transform = 'translateX(0)';
-                currentIndex = 0;
-            }, 500);
-        }
-    }
+// Clone the first and last images
+const firstImageClone = imagesContainer.children[0].cloneNode(true); // Clone the first actual image
+const lastImageClone = imagesContainer.children[totalImages-1].cloneNode(true); // Clone the last actual image
+
+// Append and prepend the clones
+imagesContainer.appendChild(firstImageClone);
+imagesContainer.insertBefore(lastImageClone, imagesContainer.children[0]);
+
+// Adjust the initial position to account for the prepended clone
+imagesContainer.style.transform = `translateX(-100%)`;
+
+function showNextImage() {
+  currentIndex++;
+  const offset = -currentIndex * 100; // Calculate the offset for sliding
+  imagesContainer.style.transition = 'transform 0.5s ease'; // Smooth transition for sliding
+  imagesContainer.style.transform = `translateX(${offset}%)`; // Slide to the next image
+
+  // Reset the position to create an infinite loop effect
+  if (currentIndex === totalImages + 1) { // Check if we've reached the end of actual images
+    setTimeout(() => {
+      imagesContainer.style.transition = 'none'; // Disable transition
+      imagesContainer.style.transform = `translateX(-100%)`; // Reset to the second actual image
+      currentIndex = 0; // Reset to the second actual image index
+    }, 500); // Wait for the transition to complete (adjust as needed)
+  }
+}
 
     function startCarousel() {
         clearInterval(intervalId);
