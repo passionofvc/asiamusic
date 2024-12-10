@@ -1,2 +1,2 @@
 # asiamusic.github.io
-a redirect page to http://www.asiamusic.hk/
+a page about [https://passionofvc.github.io/asiamusic/](https://passionofvc.github.io/asiamusic/)
