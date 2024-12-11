@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+.carousel {
+   position: relative;
+   width: 560px;
+   height: 400px;
+   overflow: hidden;
+}
+
+.carousel-content {
+   display: flex;
+   transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+   min-width: 100%;
+   box-sizing: border-box;
+}
+</style>
+
+<script type="text/javascript">
+   document.addEventListener('DOMContentLoaded', function () {
+      let currentIndex = 0;
+      const carouselContent = document.getElementById('carouselContent');
+      const items = document.querySelectorAll('.carousel-item');
+      const totalItems = items.length;
+
+      // Clone the first item and append it to the end
+      const firstItemClone = items[0].cloneNode(true);
+      carouselContent.appendChild(firstItemClone);
+
+      function showNextItem() {
+         currentIndex++;
+         carouselContent.style.transition = 'transform 0.5s ease-in-out';
+         carouselContent.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+         // Reset to the first item without transition
+         if (currentIndex === totalItems) {
+            setTimeout(() => {
+               carouselContent.style.transition = 'none';
+               carouselContent.style.transform = 'translateX(0)';
+               currentIndex = 0;
+            }, 500); // Match the transition duration
+         }
+      }
+
+      setInterval(showNextItem, 10000);
+   });
+</script>
+
+</head>
+<body>
+<div class="carousel">
+   <div class="carousel-content" id="carouselContent">
+      <div class="carousel-item">
+         <a href="tokyou-contest1.html">
+            <img class="carousel-image" src="WechatIMG1-min.jpg" alt="Image 1">
+         </a>
+      </div>
+      <div class="carousel-item">
+         <iframe width="560" height="400" src="SampleVideo_1280x720_1mb.mp4" 
+            title="東京国際青少年ピアノコンクール" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+         </iframe>
+      </div>
+   </div>
+</div>
+</body>
+</html>

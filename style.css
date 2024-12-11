@@ -132,30 +132,20 @@ nav li:hover .submenu {
     border-radius: 8px;
     max-height: 600px;
     display: flex;
-    width: 80%;
+    /* width: 80%; */
+    transition: transform 0.5s ease-in-out;
 }
 
-.carousel {
-    position: relative;
-    max-width: 500px;
-    overflow: hidden; /* Hide overflow */
-    margin: 0 auto; /* Center the carousel */
-    /* height: 300px; */
-}
-
-.carousel-images {
-    display: flex; /* Use flexbox for horizontal sliding */
-    transition: transform 0.5s ease; /* Smooth transition for sliding */
-    /* width: calc(100% * 1); */
-    width: 100%;
-}
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+ }
 
 .carousel-image {
     min-width: 100%; /* Each image takes the full width of the carousel */
     height: 100%; /* Set height to 100% of the carousel */
     object-fit: cover; /* Ensure the image covers the container without distortion */
 }
-
 
 .content-block {
     padding: 0;
