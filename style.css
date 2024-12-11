@@ -109,42 +109,37 @@ nav li:hover .submenu {
     
 }
 
-
 .left-block {
-    flex: 2; /* 2 parts */
+    flex: 2;
     background: #e2e2e2;
     padding: 10px;
     margin: 5px;
     border-radius: 8px;
-    /* height: 50%; */
-    max-height: 600px;
-    width: 20%;
-    display: flexbox;
-    justify-content: center;
-    align-items: center;
 }
 
 .right-block {
-    flex: 8; /* 8 parts */
-    background: #bac3df;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 8px;
-    max-height: 600px;
+    flex: 8;
     display: flex;
-    /* width: 80%; */
+    overflow: hidden;
+    position: relative;
+    width: 80%;
+    margin-left: 10px;
+}
+
+.carousel-container {
+    display: flex;
     transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
     min-width: 100%;
     box-sizing: border-box;
- }
+}
 
 .carousel-image {
-    min-width: 100%; /* Each image takes the full width of the carousel */
-    height: 100%; /* Set height to 100% of the carousel */
-    object-fit: cover; /* Ensure the image covers the container without distortion */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .content-block {

@@ -57,18 +57,18 @@
             <br><br><br>
             <a href="tokyou-contest-apply.html" class="apply-button">参加申込</a>
         </div>
-        <div class="right-block" id="carouselContent">
-            <div class="carousel-item">
-                <div>
+        <div class="right-block">
+            <div class="carousel-container" id="carouselContent">
+                <div class="carousel-item">
                     <a href="tokyou-contest1.html"><img class="carousel-image" src="WechatIMG1-min.jpg" alt="Image 1"></a>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <iframe width="560" height="400" src="https://www.youtube.com/embed/j7vqV89sg7s?si=QrDCMy1Z_i_xKV7F" 
+                <div class="carousel-item">
+                    <iframe width="560" height="400" src="https://www.youtube.com/embed/j7vqV89sg7s" 
                     title="東京国際青少年ピアノコンクール" frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
+                    allowfullscreen>
+                    </iframe>
+                </div>
             </div>
         </div>
     </div>
@@ -110,16 +110,32 @@
     let intervalId = 0;
     let currentIndex = 0;
     const carouselContent = document.getElementById('carouselContent');
-    const items = document.querySelectorAll('.carousel-item');
-    const totalItems = items.length;
+    const totalItems = carouselContent.children.length;
 
-    // Clone the first item and append it to the end
-    const firstItemClone = items[0].cloneNode(true);
+    const firstItemClone = carouselContent.children[0].cloneNode(true);
+    const lastItemClone  = carouselContent.children[totalItems-1].cloneNode(true);
+    
     carouselContent.appendChild(firstItemClone);
+    carouselContent.insertBefore(lastItemClone, carouselContent.children[0]);
+    carouselContent.style.transform = `translateX(-100%)`;
     startCarousel();
-
     carouselContent.addEventListener('mouseenter', stopCarousel);
     carouselContent.addEventListener('mouseleave', startCarousel);
+
+    function showNextItem() {
+        currentIndex++;
+        const offset = -currentIndex * 100;
+        carouselContent.style.transition = 'transform 0.5s ease';
+        carouselContent.style.transform = `translateX(${offset}%)`;
+
+        if (currentIndex === totalItems + 1) {
+            setTimeout(() => {
+                carouselContent.style.transition = 'none';
+                carouselContent.style.transform = `translateX(-100%)`;
+                currentIndex = 0;
+            }, 500);
+        }
+    }
 
     function startCarousel() {
         clearInterval(intervalId);
@@ -127,24 +143,8 @@
     }
 
     function stopCarousel() {
-        clearInterval(intervalId); // Clear the interval when stopping the carousel
+        clearInterval(intervalId);
     }
-
-    function showNextItem() {
-        currentIndex++;
-        carouselContent.style.transition = 'transform 0.5s ease-in-out';
-        carouselContent.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-        // Reset to the first item without transition
-        if (currentIndex === totalItems) {
-            setTimeout(() => {
-                carouselContent.style.transition = 'none';
-                carouselContent.style.transform = 'translateX(0)';
-                currentIndex = 0;
-            }, 500); // Match the transition duration
-        }
-    }
-
 
 </script>
 </body>
