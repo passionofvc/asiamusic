@@ -180,32 +180,29 @@
             pauseOnMouseEnter: true,
         });
 
-
-        const menuItems = document.querySelectorAll('.submenu');
-
-        menuItems.forEach(item => {
-            const parent = item.parentNode;
-
-            parent.addEventListener('mouseenter', () => {
-                item.classList.remove('hidden');
+        const submenus = document.querySelectorAll('.submenu');
+        function closeAllSubmenus() {
+            submenus.forEach(submenu => {
+                submenu.classList.add('hidden');
             });
-
-            item.addEventListener('click', (event) => {
-                event.stopPropagation(); // イベントの伝播を止める
-            });
-            
-            // タッチイベントにも対応
-            parent.addEventListener('touchstart', () => {
-                item.classList.remove('hidden');
-            });
-
-            parent.addEventListener('touchend', () => {
-                // 一定時間後にサブメニューを隠す
-                setTimeout(() => {
-                    item.classList.add('hidden');
-                }, 5000);
+        }
+        const menuItems = document.querySelectorAll('.relative a');
+        menuItems.forEach(menuItem => {
+            const submenu = menuItem.nextElementSibling;
+            menuItem.addEventListener('click', (event) => {
+                closeAllSubmenus();
+                if (submenu) {
+                    submenu.classList.toggle('hidden');
+                    event.stopPropagation();
+                }
             });
         });
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.relative')) {
+                closeAllSubmenus();
+            }
+        });
+        
     </script>
 </body>
 
