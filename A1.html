@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>華音アジア文化芸術促進協会</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #e2ebcb;
+            color: #fff;
+            padding: 0px;
+            text-align: center;
+        }
+
+        header img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        nav {
+            background: #161616;
+            margin: 5px 0;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+        }
+
+        nav a {
+            color: #fff7f7;
+            text-decoration: none;
+            margin: 0px 70px;
+            padding: 10px;
+            display: block;
+        }
+
+        .main {
+            text-align: center;
+            padding: 5px;
+            background: #fdfcfc;
+            border-radius: 15px;
+            margin: 20px;
+        }
+
+        .tokyo-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 10px;
+            background-color: #bea5a5;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .left-block {
+            flex: 2;
+            background: #e2e2e2;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 8px;
+        }
+
+        .right-block {
+            flex: 8;
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            width: 80%;
+            margin-left: 10px;
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        footer {
+            background: #4022c4;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="header.jpg.webp" alt="Header Image">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">ホーム</a></li>
+            <li>
+                <a href="#">東京国際青少年ピアノコンクール</a>
+                <ul class="submenu">
+                    <li><a href="tokyou-contest1.html">東京国際青少年ピアノコンクール2024</a></li>
+                    <li><a href="tokyou-contest2.html">東京国際青少年ピアノコンクール2023</a></li>
+                    <li><a href="tokyou-contest3.html">東京国際青少年ピアノコンクール2022</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">SAKURA 日本国際青少年アーティストコンクール</a>
+                <ul class="submenu">
+                    <li><a href="sakura-contest1.html">SAKURA 日本国際青少年アーティストコンクール2024</a></li>
+                    <li><a href="sakura-contest2.html">SAKURA 日本国際青少年アーティストコンクール2023</a></li>
+                    <li><a href="sakura-contest3.html">SAKURA 日本国際青少年アーティストコンクール2022</a></li>
+                </ul>
+            </li>
+            <li><a href="huayin-org.html">協会概要</a></li>
+        </ul>
+    </nav>
+
+    <div class="main">
+        <div class="tokyo-container">
+            <div class="left-block">東京国際青少年ピアノコンクール
+                <br><br><br>
+                <a href="tokyou-contest-apply.html" class="apply-button">参加申込</a>
+            </div>
+            <div class="right-block">
+                <div class="carousel-container" id="carouselContent">
+                    <div class="carousel-item">
+                        <a href="tokyou-contest1.html"><img class="carousel-image" src="WechatIMG1-min.jpg" alt="Image 1"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <iframe width="560" height="400" src="https://www.youtube.com/embed/j7vqV89sg7s" 
+                        title="東京国際青少年ピアノコンクール" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sakura-container background-cover">
+            <div class="left-block">SAKURA 日本国際青少年アーティストコンクール
+                <br><br><br>
+                <a href="sakura-contest-apply.html" class="apply-button">参加申込</a>
+            </div>
+            <div class="right-block">
+                <div class="carousel">
+                    <div class="carousel-images" id="sakura-carouselImages">
+                        <a href="sakura-contest1.html"><img class="carousel-image" src="sakura-min.jpg" alt="Image 1"></a>
+                    </div>
+                </div>
+                <div>
+                    <iframe width="560" height="400" src="https://www.youtube.com/embed/18XAf4nFau8" title="2023年 SAKURA日本国际青少年艺术家大赛-总决赛" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy;一般社団法人 華音アジア文化芸術促進協会
+    </footer>
+
+    <script type="text/javascript">
+        let intervalId = 0;
+        let currentIndex = 0;
+        const carouselContent = document.getElementById('carouselContent');
+        const items = carouselContent.querySelectorAll('.carousel-item');
+        const totalItems = items.length;
+
+        function startCarousel() {
+            clearInterval(intervalId);
+            intervalId = setInterval(showNextItem, 3000);
+        }
+
+        function stopCarousel() {
+            clearInterval(intervalId);
+        }
+
+        function showNextItem() {
+            currentIndex = (currentIndex + 1) % totalItems; // Wrap around the index
+            carouselContent.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        // Start the carousel
+        startCarousel();
+        carouselContent.addEventListener('mouseenter', stopCarousel);
+        carouselContent.addEventListener('mouseleave', startCarousel);
+    </script>
+</body>
+
+</html>
