@@ -182,32 +182,28 @@
 
 
         const menuItems = document.querySelectorAll('.submenu');
+
         menuItems.forEach(item => {
             const parent = item.parentNode;
+
             parent.addEventListener('mouseenter', () => {
                 item.classList.remove('hidden');
             });
-            item.addEventListener('mouseleave', () => {
-                item.classList.add('hidden');
+
+            item.addEventListener('click', (event) => {
+                event.stopPropagation(); // イベントの伝播を止める
             });
-        });
-
-        menuItems.forEach(item => {
-            const parent = item.parentNode;
-
-            // タッチ開始時にサブメニューを表示
+            
+            // タッチイベントにも対応
             parent.addEventListener('touchstart', () => {
                 item.classList.remove('hidden');
             });
 
-            // タッチ終了またはキャンセル時にサブメニューを非表示
-            parent.addEventListener('touchend', (event) => {
-                if (!item.contains(event.target) && !parent.contains(event.target)) {
+            parent.addEventListener('touchend', () => {
+                // 一定時間後にサブメニューを隠す
+                setTimeout(() => {
                     item.classList.add('hidden');
-                }
-            });
-            parent.addEventListener('touchcancel', (event) => {
-                item.classList.add('hidden');
+                }, 5000);
             });
         });
     </script>
