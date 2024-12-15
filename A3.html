@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>華音アジア文化芸術促進協会</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <style>
+        .swiper-container-tokyo,
+        .swiper-container-sakura {
+            width: 100%;
+            overflow: hidden;
+        }
+    
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            max-height: 300px;
+        }
+    
+        .swiper-slide iframe {
+            width: 100%;
+            height: 300px;
+            max-height: 300px;
+        }
+    
+        .left-block-tokyo,
+        .left-block-sakura {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+        }
+    
+        .left-block-tokyo {
+            background-image: url('WechatIMG1-min-b.jpg');
+        }
+    
+        .left-block-sakura {
+            background-image: url('sakura-min-b.png');
+        }
+    
+        @media (min-width: 768px) {
+            .nav-menu {
+                display: flex;
+                /* Flexコンテナにする */
+                justify-content: center;
+                /* 主軸方向を中央に */
+                align-items: center;
+                /* クロス軸方向を中央に */
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+<div class="container mx-auto">
+
+    <header class="bg-gray-800 text-white">
+        <div class="container"> 
+            <img src="header.jpg.webp" class="w-full h-full object-cover" alt="Header Image"> 
+        </div>
+    </header>
+
+    <nav class="nav-menu bg-gray-700 text-white">
+        <div class="container mx-auto py-4">
+            <div class="flex justify-between items-center">
+                <button id="mobile-menu-button" class="lg:hidden focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <ul id="mobile-menu" class="hidden flex-col lg:flex lg:flex-row lg:justify-center lg:space-x-20 mt-14 lg:mt-0">
+                <li class="relative">
+                    <a href="#" class="hover:text-blue-500">ホーム</a>
+                </li>
+                <li class="relative group">
+                    <a href="#" class="hover:text-blue-500">東京国際青少年ピアノコンクール</a>
+                    <ul class="submenu absolute hidden bg-gray-800 text-white rounded-md mt-2 z-10 group-hover:block">
+                        <li><a href="tokyou-contest1.html" class="block px-4 py-2 hover:bg-gray-700">東京国際青少年ピアノコンクール2024</a></li>
+                        <li><a href="tokyou-contest2.html" class="block px-4 py-2 hover:bg-gray-700">東京国際青少年ピアノコンクール2023</a></li>
+                        <li><a href="tokyou-contest3.html" class="block px-4 py-2 hover:bg-gray-700">東京国際青少年ピアノコンクール2022</a></li>
+                    </ul>
+                </li>
+                <li class="relative group">
+                    <a href="#" class="hover:text-blue-500">SAKURA 日本国際青少年アーティストコンクール</a>
+                    <ul class="submenu absolute hidden bg-gray-800 text-white rounded-md mt-2 z-10 group-hover:block">
+                        <li><a href="sakura-contest1.html" class="block px-4 py-2 hover:bg-gray-700">SAKURA 日本国際青少年アーティストコンクール2024</a></li>
+                        <li><a href="sakura-contest2.html" class="block px-4 py-2 hover:bg-gray-700">SAKURA 日本国際青少年アーティストコンクール2023</a></li>
+                        <li><a href="sakura-contest3.html" class="block px-4 py-2 hover:bg-gray-700">SAKURA 日本国際青少年アーティストコンクール2022</a></li>
+                    </ul>
+                </li>
+                <li class="relative">
+                    <a href="huayin-org.html" class="hover:text-blue-500">協会概要</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu-dropdown" class="hidden lg:hidden bg-gray-800 text-white rounded-md mt-2">
+        <ul class="flex flex-col space-y-2 p-4">
+            <li><a href="#" class="block hover:bg-gray-700 px-4 py-2">ホーム</a></li>
+            <li class="relative group">
+                <a href="#" class="block hover:bg-gray-700 px-4 py-2">東京国際青少年ピアノコンクール</a>
+                <ul class="submenu absolute hidden bg-gray-800 text-white rounded-md mt-2 z-10">
+                    <li><a href="tokyou-contest1.html" class="block px-4 py-2 hover:bg-gray-700">東京国際青少年ピアノコンクール2024</a></li>
+                    <li><a href="tokyou-contest2.html" class="block px-4 py-2 hover:bg-gray-700">東京国際青少年ピアノコンクール2023</a></li>
+                    <li><a href="tokyou-contest3.html" class="block px-4 py-2 hover:bg-gray-700">東京国際青少年ピアノコンクール2022</a></li>
+                </ul>
+            </li>
+            <li class="relative group">
+                <a href="#" class="block hover:bg-gray-700 px-4 py-2">SAKURA 日本国際青少年アーティストコンクール</a>
+                <ul class="submenu absolute hidden bg-gray-800 text-white rounded-md mt-2 z-10">
+                    <li><a href="sakura-contest1.html" class="block px-4 py-2 hover:bg-gray-700">SAKURA 日本国際青少年アーティストコンクール2024</a></li>
+                    <li><a href="sakura-contest2.html" class="block px-4 py-2 hover:bg-gray-700">SAKURA 日本国際青少年アーティストコンクール2023</a></li>
+                    <li><a href="sakura-contest3.html" class="block px-4 py-2 hover:bg-gray-700">SAKURA 日本国際青少年アーティストコンクール2022</a></li>
+                </ul>
+            </li>
+            <li><a href="huayin-org.html" class="block hover:bg-gray-700 px-4 py-2">協会概要</a></li>
+        </ul>
+    </div>
+
+    <main class="container mx-auto py-4">
+        <div class="flex flex-col md:flex-row py-2 rounded-lg bg-gray-100"> 
+            <div class="bg-gray-200 p-4 md:w-2/6 rounded-lg left-block-tokyo mb-1 md:mb-0"> 
+                <h2 class="bg-blue-400 text-white font-bold mb-4">東京国際青少年ピアノコンクール</h2>
+                <a href="tokyou-contest-apply.html" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">参加申込</a>
+            </div>
+            <div class="flex-1 md:w-4/6 rounded-lg bg-gray-100">
+                <div class="swiper-container-tokyo rounded-lg bg-gray-100">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="tokyou-contest1.html"><img src="WechatIMG1-min.jpg" alt="Image 1"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <iframe src="https://www.youtube.com/embed/j7vqV89sg7s"
+                                id="tokyo-iframe"
+                                title="東京国際青少年ピアノコンクール" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row py-2 rounded-lg bg-gray-100"> 
+            <div class="bg-gray-200 p-4 md:w-2/6 rounded-lg left-block-sakura mb-1 md:mb-0"> 
+                <h2 class="bg-blue-400 text-white font-bold mb-4">SAKURA 日本国際青少年アーティストコンクール</h2>
+                <a href="sakura-contest-apply.html" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">参加申込</a>
+            </div>
+            <div class="flex-1 md:w-4/6 rounded-lg bg-gray-100">
+                <div class="swiper-container-sakura rounded-lg bg-gray-100">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="sakura-contest1.html"><img src="sakura-min.jpg" alt="Image 2"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <iframe src="https://www.youtube.com/embed/18XAf4nFau8"
+                                id="sakura-iframe"
+                                title="SAKURA 日本国際青少年アーティストコンクール" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row py-2 rounded-lg bg-blue-100">
+            <div class="container mx-auto text-blue-500 text-center py-4">
+                備考欄
+                <br><br><br><br><br>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-4">
+        <div class="container mx-auto">
+            <p>&copy;一般社団法人 華音アジア文化芸術促進協会</p>
+        </div>
+    </footer>
+
+</div>
+
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script>
+    var swiper_tokyo = new Swiper('.swiper-container-tokyo', {
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        loop: true,
+        slidesPerView: 1,
+        centeredSlides: true,
+        pauseOnMouseEnter: true,
+    });
+
+    var swiper_sakura = new Swiper('.swiper-container-sakura', {
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        loop: true,
+        slidesPerView: 1,
+        centeredSlides: true,
+        pauseOnMouseEnter: true,
+    });
+
+    const submenus = document.querySelectorAll('.submenu');
+    function closeAllSubmenus() {
+        submenus.forEach(submenu => {
+            submenu.classList.add('hidden');
+        });
+    }
+    const menuItems = document.querySelectorAll('.relative a');
+    menuItems.forEach(menuItem => {
+        const submenu = menuItem.nextElementSibling;
+        menuItem.addEventListener('click', (event) => {
+            closeAllSubmenus();
+            if (submenu) {
+                submenu.classList.toggle('hidden');
+                event.stopPropagation();
+            }
+        });
+    });
+    document.addEventListener('click', (event) => {
+        if (!event.target.closest('.relative')) {
+            closeAllSubmenus();
+        }
+    });
+
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenuDropdown = document.getElementById('mobile-menu-dropdown');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenuDropdown.classList.toggle('hidden');
+    });
+</script>
+</body>
+
+</html>
